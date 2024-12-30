@@ -10,9 +10,9 @@ function ContentList() {
   const totalContests = contestlist.length;
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(5); 
-  const [tempItemsPerPage, setTempItemsPerPage] = useState(5); 
-  const [favorites, setFavorites] = useState([]); 
+  const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [tempItemsPerPage, setTempItemsPerPage] = useState(5);
+  const [favorites, setFavorites] = useState([]);
   const [showFavorites, setShowFavorites] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -22,8 +22,8 @@ function ContentList() {
   const handleSetItemsPerPage = () => {
     const newItemsPerPage = parseInt(tempItemsPerPage, 10);
     if (!isNaN(newItemsPerPage) && newItemsPerPage > 0) {
-      const currentIndex = startContest; 
-      const newPage = Math.floor(currentIndex / newItemsPerPage) + 1; 
+      const currentIndex = startContest;
+      const newPage = Math.floor(currentIndex / newItemsPerPage) + 1;
       setItemsPerPage(newItemsPerPage);
       setCurrentPage(newPage);
     }
@@ -44,7 +44,7 @@ function ContentList() {
   };
 
   const filteredContests = contestlist.filter((contest) => {
-    const contestName = contest.name || ""; 
+    const contestName = contest.name || "";
     return contestName.toLowerCase().includes(searchQuery.toLowerCase());
   });
 
@@ -58,28 +58,28 @@ function ContentList() {
     <div className="flex flex-col h-full">
       {/* Search Bar */}
       <div className="flex flex-row w-full   items-center justify-center">
-      <div className="flex justify-end   ">
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="p-2 rounded-lg px-10 "
-        />
+        <div className="flex justify-end   ">
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="p-2 rounded-lg px-10 "
+          />
+        </div>
+
+        <div className="flex justify-end p-3">
+          <button
+            className={`py-2 px-4 rounded ${
+              showFavorites ? "bg-blue-500 text-white" : "bg-red-300  "
+            }`}
+            onClick={() => setShowFavorites(!showFavorites)}
+          >
+            {showFavorites ? "Show All Contests" : "Show Favorites"}
+          </button>
+        </div>
       </div>
-      
-      <div className="flex justify-end p-3">
-        <button
-          className={`py-2 px-4 rounded ${
-            showFavorites ? "bg-blue-500 text-white" : "bg-red-300  "
-          }`}
-          onClick={() => setShowFavorites(!showFavorites)}
-        >
-          {showFavorites ? "Show All Contests" : "Show Favorites"}
-        </button>
-      </div>
-      </div>
-     
+
       <div className="px-3 grid grid-cols-2 gap-4 overflow-y-scroll">
         {currentContests.map((contest) => (
           <div key={contest.id}>
@@ -107,5 +107,3 @@ function ContentList() {
 }
 
 export default ContentList;
-
-
