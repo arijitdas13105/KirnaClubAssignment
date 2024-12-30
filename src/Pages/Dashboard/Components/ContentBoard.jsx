@@ -15,7 +15,6 @@ function ContentBoard() {
        </div>
        <div className='flex h-full w-[20%]'>
         {/* <h2>Statistics</h2> */}
-        <FilterBoard/>
        </div>
       </div>
     </div>
