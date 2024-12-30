@@ -71,7 +71,7 @@ function ContentList() {
         <div className="flex justify-end p-3">
           <button
             className={`py-2 px-4 rounded ${
-              showFavorites ? "bg-blue-500 text-white" : "bg-red-300  "
+              showFavorites ? "bg-blue-500 text-white" : "bg-pink-500 font-bold "
             }`}
             onClick={() => setShowFavorites(!showFavorites)}
           >
