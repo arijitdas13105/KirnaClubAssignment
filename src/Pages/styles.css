@@ -1,0 +1,15 @@
+/* src/styles.css */
+.custom-layout {
+    background-color: red !important;
+    min-height: 100vh;
+  }
+  
+  .custom-section {
+    background-color: blue !important;
+  }
+  
+  .custom-card {
+    background-color: yellow !important;
+     width: 300px;
+  }
+  
