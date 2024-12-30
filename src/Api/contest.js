@@ -22,7 +22,7 @@ const Contest =()=>{
     } catch (error) {
       setError(error);
     } finally {
-      setLoading(false); // Ensure loading is set to false when the fetch is complete
+      setLoading(false); 
     }
   };
   return {
